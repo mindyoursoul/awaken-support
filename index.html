@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Datenschutzerklärung — awaken</title>
+<style>
+  :root {
+    --void: #0b0b0d;
+    --void-raise: #131316;
+    --card: #17171b;
+    --ink: #f2ede2;
+    --ink-dim: #a9a297;
+    --ink-faint: #6f695f;
+    --gold: #c9a24b;
+    --gold-bright: #e8c675;
+    --gold-dim: #8a723f;
+    --hair: rgba(201, 162, 75, 0.16);
+    --focus: #e8c675;
+  }
+
+  :root[data-theme="light"] {
+    --void: #faf8f3;
+    --void-raise: #f2efe6;
+    --card: #ffffff;
+    --ink: #24211a;
+    --ink-dim: #5c574a;
+    --ink-faint: #948d7c;
+    --gold: #97722a;
+    --gold-bright: #7a5c1f;
+    --gold-dim: #b99a52;
+    --hair: rgba(151, 114, 42, 0.22);
+    --focus: #7a5c1f;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --void: #faf8f3;
+      --void-raise: #f2efe6;
+      --card: #ffffff;
+      --ink: #24211a;
+      --ink-dim: #5c574a;
+      --ink-faint: #948d7c;
+      --gold: #97722a;
+      --gold-bright: #7a5c1f;
+      --gold-dim: #b99a52;
+      --hair: rgba(151, 114, 42, 0.22);
+      --focus: #7a5c1f;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--void);
+    color: var(--ink);
+    font-family: -apple-system, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+
+  a { color: var(--gold-bright); text-decoration-color: var(--hair); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--gold-bright); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(560px 320px at 50% -8%, var(--hair), transparent 70%);
+    z-index: 0;
+  }
+
+  header {
+    position: relative;
+    z-index: 1;
+    padding: 4.5rem 1.5rem 3rem;
+    text-align: center;
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .mark::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold-bright);
+    box-shadow: 0 0 14px 3px var(--gold-bright);
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(1.9rem, 5vw, 2.7rem);
+    letter-spacing: -0.01em;
+    margin: 0.9rem 0 0.6rem;
+    text-wrap: balance;
+  }
+
+  .sub {
+    color: var(--ink-dim);
+    font-size: 0.98rem;
+    margin: 0;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
+  }
+
+  .notice {
+    background: var(--card);
+    border: 1px solid var(--hair);
+    border-radius: 10px;
+    padding: 1.1rem 1.3rem;
+    font-size: 0.92rem;
+    color: var(--ink-dim);
+    margin-bottom: 3rem;
+  }
+
+  .notice strong { color: var(--ink); }
+
+  section {
+    padding: 2.1rem 0;
+    border-top: 1px solid var(--hair);
+  }
+
+  section:first-of-type { border-top: none; padding-top: 0; }
+
+  .num {
+    font-variant-numeric: tabular-nums;
+    color: var(--gold);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 1.32rem;
+    margin: 0 0 0.85rem;
+    text-wrap: balance;
+  }
+
+  p { margin: 0 0 0.9rem; color: var(--ink); max-width: 60ch; }
+  p:last-child { margin-bottom: 0; }
+  .lede { color: var(--ink-dim); font-size: 0.96rem; max-width: 62ch; }
+
+  ul { margin: 0 0 0.9rem; padding-left: 1.2rem; max-width: 58ch; }
+  li { margin-bottom: 0.4rem; }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--hair);
+    border-radius: 10px;
+    padding: 1.4rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-card .label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-faint);
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-card .value {
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2.5rem 1.5rem 3.5rem;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .mark::before { animation: pulse 3.2s ease-in-out infinite; }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<header>
+  <span class="mark">awaken</span>
+  <h1>Datenschutzerklärung</h1>
+  <p class="sub">Stand: 31. Juli 2026</p>
+</header>
+
+<main>
+  <div class="notice">
+    <strong>Kurzfassung:</strong> awaken läuft fast vollständig auf deinem
+    iPhone. Es gibt kein Nutzerkonto, keine Cloud, keine Werbe-ID. Was
+    unten steht, ist die ausführliche Version davon.
+  </div>
+
+  <section>
+    <span class="num">01</span>
+    <h2>Bewegungssensor</h2>
+    <p>
+      awaken nutzt den Bewegungssensor deines iPhones, um deine Atmung zu
+      erkennen, während das Gerät während einer Sitzung auf deinem Körper
+      liegt. Diese Bewegungsdaten werden ausschließlich auf deinem Gerät
+      verarbeitet, nirgendwo hochgeladen und nirgendwo gespeichert.
+    </p>
+    <p>Die Kamera wird von der App nicht verwendet.</p>
+  </section>
+
+  <section>
+    <span class="num">02</span>
+    <h2>Sprachausgabe</h2>
+    <p>
+      Die gesprochenen Anweisungen in der App sind vorproduzierte
+      Audiodateien — nicht live erzeugt und nicht auf deine Stimme oder
+      Eingaben bezogen. Es werden keine Sprach- oder Audiodaten von dir
+      aufgenommen oder verarbeitet.
+    </p>
+  </section>
+
+  <section>
+    <span class="num">03</span>
+    <h2>Was lokal gespeichert wird</h2>
+    <p class="lede">
+      Folgendes bleibt ausschließlich auf deinem Gerät:
+    </p>
+    <ul>
+      <li>Einstellungen — z.&nbsp;B. bevorzugte Atemrhythmen, Lautstärke</li>
+      <li>Nutzungsstatistiken — Anzahl und Dauer der Sitzungen, Erfolgswerte</li>
+      <li>Kauf- und Freischaltstatus (siehe Punkt 5)</li>
+    </ul>
+    <p>
+      Es gibt kein Nutzerkonto und keinen Cloud-Abgleich. Löschst du die
+      App, werden auch diese Daten gelöscht.
+    </p>
+  </section>
+
+  <section>
+    <span class="num">04</span>
+    <h2>Anonyme Nutzungsstatistik</h2>
+    <p>
+      Die App sendet anonyme, nicht-personenbezogene Nutzungsereignisse
+      (z.&nbsp;B. „Sitzung gestartet/beendet", welche Funktion genutzt wurde)
+      an den Dienst TelemetryDeck, gehostet in der EU. Dabei wird keine
+      Werbe-ID verwendet und keine Zustimmung über Apples
+      App-Tracking-Transparency abgefragt, weil kein
+      geräteübergreifendes Tracking stattfindet. Es werden keine Namen,
+      keine Standortdaten und keine Inhalte deiner Sitzungen übertragen.
+    </p>
+  </section>
+
+  <section>
+    <span class="num">05</span>
+    <h2>Käufe</h2>
+    <p>
+      Für die Premium-Freischaltung (Jahresabo oder einmaliger Kauf) wird
+      ausschließlich Apples eigenes In-App-Kauf-System verwendet.
+      Zahlungsdaten werden von Apple verarbeitet, nicht von uns — wir
+      erhalten und speichern keine Zahlungsinformationen.
+    </p>
+  </section>
+
+  <section>
+    <span class="num">06</span>
+    <h2>Keine Weitergabe zu Werbezwecken</h2>
+    <p>
+      Wir verkaufen oder vermieten deine Daten nicht, und es findet kein
+      personalisiertes Werbe-Tracking statt.
+    </p>
+  </section>
+
+  <section>
+    <span class="num">07</span>
+    <h2>Kontakt &amp; Support</h2>
+    <p class="lede">
+      Fragen zum Datenschutz, zur App selbst oder ein Problem gefunden?
+      Meld dich jederzeit:
+    </p>
+    <div class="contact-card">
+      <div>
+        <div class="label">E-Mail</div>
+        <div class="value">studie-krypton-2j@icloud.com</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  awaken — diese Seite dient als Datenschutz- und Support-Adresse für den App Store.
+</footer>
+
+</body>
+</html>
